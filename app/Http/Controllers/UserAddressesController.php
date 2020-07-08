@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\UserAddress;
+use App\Http\Requests\UserAddressRequest;
 class UserAddressesController extends Controller
 {
 	public function index(Request $request)
