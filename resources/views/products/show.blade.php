@@ -84,11 +84,11 @@
   $('.btn-favor').click(function () {
       axios.post('{{ route('products.favor', ['product' => $product->id]) }}')
         .then(function () {
-          swal('操作成功', '', 'success')
-          .then(function () {  // 这里加了一个 then() 方法
-              location.reload();
-            });
-        }, function(error) {
+      swal('加入购物车成功', '', 'success')
+        .then(function() {
+          location.href = '{{ route('cart.index') }}';
+        });
+    }, function(error) {
           if (error.response && error.response.status === 401) {
             swal('请先登录', '', 'error');
           }  else if (error.response && error.response.data.msg) {
