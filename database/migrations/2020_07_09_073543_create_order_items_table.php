@@ -14,19 +14,6 @@ class CreateOrderItemsTable extends Migration
     public function up()
     {
         Schema::create('order_items', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-         Schema::create('order_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
@@ -40,5 +27,15 @@ class CreateOrderItemsTable extends Migration
             $table->text('review')->nullable();
             $table->timestamp('reviewed_at')->nullable();
         });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('order_items');
     }
 }
