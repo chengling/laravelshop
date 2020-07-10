@@ -22,6 +22,7 @@ $factory->define(Product::class, function (Faker $faker) {
     return [
         'title'        => $faker->word,
         'description'  => $faker->sentence,
+        'long_title'   => $faker->sentence,
         'image'        => $image,
         'on_sale'      => true,
         'rating'       => $faker->numberBetween(0, 5),
