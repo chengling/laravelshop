@@ -35,7 +35,7 @@ class OrdersController extends Controller
     {
         $user  = $request->user();
         // 如果传入了优惠券，则先检查是否可用
-        if ($coupon) {
+        if ($request->coupon_code) {
         	// 但此时我们还没有计算出订单总金额，因此先不校验
         	$coupon->checkAvailable($user,$coupon);
         }
