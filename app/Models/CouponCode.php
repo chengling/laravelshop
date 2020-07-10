@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Encore\Admin\Traits\DefaultDatetimeFormat;
 use Carbon\Carbon;
 use App\Exceptions\CouponCodeUnavailableException;
+use Str;
 class CouponCode extends Model
 {
 	use DefaultDatetimeFormat;
