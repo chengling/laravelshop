@@ -174,9 +174,7 @@ Overtrue\LaravelLang\TranslationServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        'providers' => [
-        	SwooleTW\Http\LaravelServiceProvider::class,
-        ],
+        SwooleTW\Http\LaravelServiceProvider::class,
 
     ],
 
